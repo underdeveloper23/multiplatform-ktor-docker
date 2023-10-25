@@ -51,6 +51,7 @@ kotlin {
             val postgresqlVersion: String by project
             val hikariVersion: String by project
             val log4jVersion: String by project
+            val swaggerCodegenVersion: String by project
 
             dependencies {
                 implementation("io.ktor:ktor-server-netty:$ktorVersion")
@@ -86,6 +87,12 @@ kotlin {
 
                 implementation("org.apache.logging.log4j:log4j-core:$log4jVersion")
                 implementation("org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion")
+
+                implementation("io.swagger.codegen.v3:swagger-codegen-generators:$swaggerCodegenVersion")
+
+                implementation("io.ktor:ktor-server-swagger:$ktorVersion")
+                implementation("io.ktor:ktor-server-openapi:$ktorVersion")
+                implementation("io.ktor:ktor-server-cors:$ktorVersion")
             }
         }
         val jvmTest by getting

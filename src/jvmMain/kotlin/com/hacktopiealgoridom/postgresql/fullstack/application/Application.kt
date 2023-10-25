@@ -8,8 +8,8 @@ import com.hacktopiealgoridom.postgresql.fullstack.service.UserService
 import com.hacktopiealgoridom.postgresql.fullstack.service.UserPlugin
 import com.hacktopiealgoridom.postgresql.fullstack.application.modules.ModuleCalifornia
 import com.hacktopiealgoridom.postgresql.fullstack.application.modules.ModuleEU
+import io.ktor.http.*
 
-import io.ktor.http.HttpStatusCode
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.embeddedServer
@@ -17,9 +17,13 @@ import io.ktor.server.html.*
 import io.ktor.server.http.content.*
 import io.ktor.server.netty.Netty
 import io.ktor.server.plugins.contentnegotiation.*
+import io.ktor.server.plugins.cors.routing.*
+import io.ktor.server.plugins.openapi.*
+import io.ktor.server.plugins.swagger.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import io.swagger.codegen.v3.generators.html.StaticHtmlCodegen
 import kotlinx.html.*
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -145,6 +149,13 @@ fun Application.module() {
                 call.respond(HttpStatusCode.Unauthorized, "Login failed")
             }
         }
+
+        swaggerUI(path = "swagger", swaggerFile = "openapi/documentation.yaml") {
+            version = "4.15.5"
+        }
+        openAPI(path="openapi", swaggerFile = "openapi/documentation.yaml") {
+            codegen = StaticHtmlCodegen()
+        }
     }
 
     // Register localised politics requirement plugin
@@ -159,6 +170,11 @@ fun Application.module() {
             prettyPrint = true
             isLenient = true
         })
+    }
+
+    install(CORS) {
+        anyHost()
+        allowHeader(HttpHeaders.ContentType)
     }
 
 //            post("/users/login") {
