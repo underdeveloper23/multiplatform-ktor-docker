@@ -1,0 +1,37 @@
+The New Unity License
+
+Version 1.0, [Date]
+
+Preamble
+
+This is an open-source software license designed to promote the free and open distribution of software, subject to certain restrictions as described herein.
+
+1. Definitions
+
+   a. "Author" refers to the original creator of the software, who is the first holder of the GitHub repository associated with the software.
+   b. "Commercial Client" refers to any entity that has entered into a commercial agreement with the Author for the development of the software or any derivative thereof.
+   c. "Software" refers to the software and any derivative works covered by this license.
+
+2. License Grant
+
+   a. Permission is hereby granted to any person or entity to use, copy, modify, and distribute the Software subject to the conditions and limitations contained in this license.
+
+   b. Any Commercial Client, as defined above, is expressly forbidden from using, copying, modifying, or distributing the Software or any derivative works without prior written permission from the Author.
+
+3. Termination
+
+   a. This license is automatically terminated for any Commercial Client as defined above.
+
+4. Miscellaneous
+
+   a. The Author reserves the right to modify the terms and conditions of this license.
+
+   b. This license does not grant any warranties or representations and is provided as is.
+
+   c. The Author will not be held liable for any damages arising from the use of the Software.
+
+5. Contact Information
+
+   If you have any questions about this license, please contact the Author at [Author's Contact Information].
+
+End of License
