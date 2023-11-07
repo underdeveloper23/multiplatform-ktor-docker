@@ -2,6 +2,9 @@
 
 This full-stack application is a sample project that demonstrates the usage of Kotlin, Ktor, Exposed (a lightweight SQL library), and PostgreSQL to build a web-based application with database functionality. The project includes modules related to user management and consent handling, as well as region-specific localised politics requirements.
 
+## You want to know more about Kotlin multiplatform? 
+This is interesting article about the Kotlin multiplatform: https://www.donnfelker.com/why-kotlin-multiplatform-wont-succeed/
+
 ## Features
 
 - User management with CRUD operations.
